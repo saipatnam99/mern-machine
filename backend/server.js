@@ -25,6 +25,10 @@ mongoose.connect('mongodb+srv://saipatnam99:royals@cluster0.y3bvq.mongodb.net/em
   useUnifiedTopology: true,
 }).then(() => console.log('MongoDB connected')).catch((err) => console.log(err));
 
+// INTRO
+app.get("/",(req,res) => {
+  res.json("hello")
+});
 // Register route
 
 app.post('/api/register', async (req,res) => {
