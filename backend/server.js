@@ -11,7 +11,9 @@ const Employee =require('./routes/employeeRoute')
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: 'http://localhost:3001', credentials: true }));
+app.use(cors({ origin: 'https://deploy-mern-machine.vercel.app',
+              methods : ["POST", "GET", "PUT","DELETE"],
+              credentials: true }));
 app.use('/api/employee', Employee)
 app.use('/uploads', express.static('uploads'));
 
