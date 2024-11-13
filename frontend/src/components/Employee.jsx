@@ -56,7 +56,7 @@ function EmployeeForm() {
 
     console.log(form);
     try {
-      const res = await axios.post('http://localhost:3000/api/employee', form, {
+      const res = await axios.post('https://mern-machine.vercel.app/api/employee', form, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setMessage('Employee created successfully');
