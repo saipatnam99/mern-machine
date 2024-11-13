@@ -12,7 +12,7 @@ const LoginPage = () => {
     console.log(username)
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/login', { username, password });
+      const response = await axios.post('https://mern-machine.vercel.app/api/login', { username, password });
      
       console.log(password)
       document.cookie = `token=${response.data.token}; path=/;`;
