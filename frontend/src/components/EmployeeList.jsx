@@ -11,7 +11,7 @@ function EmployeeList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/employee")
+      .get("https://mern-machine.vercel.app/api/employee")
       .then((response) => setEmployees(response.data))
       .catch((error) => console.error(error));
   }, []);
@@ -31,7 +31,7 @@ function EmployeeList() {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:3000/api/employee/${_id}`)
+          .delete(`https://mern-machine.vercel.app/api/employee/${_id}`)
           .then(() => {
             setEmployees(employees.filter((employee) => employee._id !== _id));
             Swal.fire("Deleted!", "The employee has been deleted.", "success");

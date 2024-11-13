@@ -38,11 +38,11 @@ function EditEmployee() {
   useEffect(() => {
     // Fetch the employee data based on the ID
     setIsLoading(true);
-    axios.get(`http://localhost:3000/api/employee/${id}`)
+    axios.get(`https://mern-machine.vercel.app/api/employee/${id}`)
       .then((response) => {
         setFormData(response.data);
         // Set the image preview with the correct full URL
-        setImagePreview(response.data.image ? `http://localhost:3000/${response.data.image}` : null);
+        setImagePreview(response.data.image ? `https://mern-machine.vercel.app/${response.data.image}` : null);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -98,7 +98,7 @@ function EditEmployee() {
     setIsLoading(true);
 
     try {
-      const res = await axios.put(`http://localhost:3000/api/employee/${id}`, updatedFormData, {
+      const res = await axios.put(`https://mern-machine.vercel.app/api/employee/${id}`, updatedFormData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 

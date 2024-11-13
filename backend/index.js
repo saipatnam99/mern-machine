@@ -11,7 +11,9 @@ const Employee =require('./routes/employeeRoute')
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: 'http://localhost:3001', credentials: true }));
+app.use(cors({ origin: 'https://mern-machine-frontend.vercel.app',
+              methods : ["POST", "GET", "PUT","DELETE"],
+              credentials: true }));
 app.use('/api/employee', Employee)
 app.use('/uploads', express.static('uploads'));
 
@@ -23,6 +25,10 @@ mongoose.connect('mongodb+srv://saipatnam99:royals@cluster0.y3bvq.mongodb.net/em
   useUnifiedTopology: true,
 }).then(() => console.log('MongoDB connected')).catch((err) => console.log(err));
 
+// INTRO
+app.get("/",(req,res) => {
+  res.json("hello")
+});
 // Register route
 
 app.post('/api/register', async (req,res) => {
