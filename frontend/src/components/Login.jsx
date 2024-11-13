@@ -10,11 +10,12 @@ const LoginPage = () => {
 
   const handleLogin = async (e) => {
     console.log(username)
+     console.log(password)
     e.preventDefault();
     try {
       const response = await axios.post('https://mern-machine.vercel.app/api/login', { username, password });
      
-      console.log(password)
+     
       document.cookie = `token=${response.data.token}; path=/;`;
       navigate('/dashboard'); // Redirect to dashboard after login
     } catch (error) {
